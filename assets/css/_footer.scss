@@ -1,0 +1,139 @@
+footer {
+  background: #000000;
+  padding: 43px 0px;
+  .footer_top {
+    @include flexBox(row, space-between, center);
+    ul {
+      margin-bottom: 0;
+      li {
+        position: relative;
+        margin-right: 25px !important;
+        &:after {
+          content: "|";
+          position: absolute;
+          top: 0;
+          right: -15px;
+          z-index: 1;
+          color: #fff;
+        }
+        &:last-child {
+          margin-right: 0px !important;
+          &:after {
+            display: none;
+          }
+        }
+        a {
+          color: #fafafa;
+          font-size: 17px;
+          &:hover {
+            color: $primarycolor;
+          }
+          &:focus,
+          &:active {
+            color: #fafafa;
+          }
+        }
+      }
+    }
+  }
+
+  .footer_bottom {
+    margin-top: 35px;
+    a {
+      &:hover {
+        color: $primarycolor !important;
+      }
+      &:focus,
+      &:active {
+        color: #fafafa;
+      }
+    }
+    h5 {
+      text-transform: uppercase;
+      color: $primarycolor;
+    }
+
+    .email_id {
+      font-size: 34px;
+      color: #fafafa;
+      margin-top: 12px;
+      display: inline-block;
+    }
+    .map_address {
+      display: block;
+      font-size: 18px;
+      color: #fafafa;
+      margin: 15px 0;
+      max-width: 395px;
+      line-height: 37px;
+    }
+    .having_icon {
+      display: flex;
+      margin-bottom: 15px;
+      color: #fafafa;
+      font-size: 19px;
+      i {
+        display: inline-block;
+        width: 24px;
+        margin-right: 13px;
+        &.clock_icon {
+          background-position: -134px 1px;
+          height: 27px;
+        }
+        &.phone_icon {
+          background-position: -163px 1px;
+          height: 27px;
+        }
+      }
+      a {
+        color: #fafafa;
+      }
+    }
+
+    .right_footer {
+      padding-left: 80px;
+      .footer_links {
+        padding-left: 0px;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        li {
+          width: 50%;
+          margin: 0 0px 20px !important;
+          a {
+            text-transform: capitalize;
+            font-size: 19px;
+            color: #fafafa;
+          }
+        }
+      }
+    }
+  }
+
+  .copyright {
+    @include flexBox(row, space-between, center);
+    padding-top: 35px;
+
+    .copy_text {
+      font-size: 17px;
+      color: #fafafa;
+    }
+    ul {
+      margin: 0;
+      li {
+        a {
+          @include flexBox(row, center, center);
+          background-color: #fafafa;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          color: #000;
+          &:hover {
+            background-color: $primarycolor;
+            color: #fafafa;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+@font-face {font-family: proximaNova;src: url(../fonts/proxima-nova-reg.ttf);} // proxima nova font
+
+@import "./variables"; // variables css import
+@import "./mixins"; // mixins css import
+
+// global css
+html , body{overflow: hidden;overflow-y: auto;}
+body{font-family: $primaryFont;background: #fafafd;}
+a , button , input[type="submit"] , input[type="button"]{transition: all 0.5s ease-in;text-decoration: none !important;outline: none !important;}
+
+h1, h2 , h3 , h4 , h5 , h6 , .h1 , .h2 , .h3 , .h4 , .h5 , .h6{margin: 0px}
+
+// bootstrap css
+.container {width: 100%;max-width: 1206px;}
+
+
+// custom classes css
+.sprite_icon{background-image: url(../img/icon-sprite.png);}
+.btn_primary{
+    display: inline-block;background: #E5D80E;text-align: center;text-transform: capitalize;border-radius: 20px;color: #000;font-weight: 600;position: relative;overflow: hidden;
+    span{position: relative;z-index: 1;}
+    &:after{content: "";position: absolute;top: 0;left: -100%;width: 100%;background: $divBackground;height: 100%;border-radius: 20px;}
+    &:hover{
+        span{color: #fff;}
+        &:after{left:0%;transition: all 0.3s ease-in;}
+    }
+}
+.btn_borderoutline{
+    display: inline-block;text-align: center;text-transform: capitalize; border-radius: 20px;color: #000;font-weight: 600;border: 2px solid;position: relative;overflow: hidden;
+    &:after{content: "";width: calc(100% - 5px);position: absolute;top: 50%;left: 50%;height: calc(100% - 5px);background: $primarycolor;border-radius: 25px;z-index: -1;transform: translate(-50%, -50%);opacity: 0;transition: all 0.5s ease-in;}
+    &:hover , &:focus , &:active{
+        &{border-color: $primarycolor;}
+        &:after{opacity: 1;}
+    }
+}
+
+
+// background-section css start
+
+.backgound_section{
+    position: relative;overflow: hidden;
+    .background_image{
+        position: absolute;
+        height: 100%;
+        &:after{
+            content: "";position: absolute;top: 0;left: 0;width: 100%;height: 100%;background: rgba(0,0,0,0.4);
+        }
+    }
+    .background_data{position: relative;z-index: 1;}
+}
+
+// pulse button css start
+
+.pulse_button{
+    .bg , .button{position: absolute;width: 50px;height: 50px;border-radius: 100%;}
+    .bg {animation: pulse 1.2s ease infinite;background: $primarycolor;}
+    .button {
+    @include flexBox(row , center , center);
+    position: absolute;z-index: 99;border: none;background: $primarycolor;background-size: 18px;cursor: pointer;outline: none;
+    a{position: absolute;color: #000;font-size: 23px;}
+    }
+    @keyframes pulse {
+    0% {transform: scale(1, 1);}
+    50% {opacity: 0.3;}
+    100% {transform: scale(1.5);opacity: 0;}
+    }
+}
+
+@import "./header"; // header css import
+@import "./footer"; // footer css import
+@import "./home"; // home page css import

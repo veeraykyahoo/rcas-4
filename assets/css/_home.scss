@@ -1,0 +1,630 @@
+// banner css start
+.banner {
+  background-color: $divBackground;
+  width: 100%;
+  height: calc(100vh - 189px);
+  min-height: 588px;
+  overflow: hidden;
+  .social_icons {
+    position: absolute;
+    padding-left: 0px;
+    right: 45px;
+    list-style: none;
+    bottom: calc(0px + 100px);
+    margin: 0px;
+    z-index: 2;
+    font-size: 25px;
+    text-align: center;
+    li {
+      margin-top: 15px;
+      a {
+        color: $primarycolor;
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .pulse_button {
+    position: absolute;
+    right: 40px;
+    bottom: 105px;
+  }
+
+  .slider_section {
+    position: relative;
+    padding: 50px 0px 50px 270px;
+    min-width: 586px;
+    .home_slider {
+      width: 730px;
+      margin: 0 auto;
+      .owl-stage-outer {
+        overflow: visible;
+        .owl-item {
+          .inner_item {
+            display: none;
+          }
+          &.active {
+            .inner_item {
+              display: block;
+            }
+          }
+        }
+      }
+
+      figure {
+        overflow: hidden;
+        width: calc(100% - 1px);
+        margin: 0;
+        border-radius: 15px;
+        &:after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.6);
+          z-index: 0;
+          border-radius: 15px;
+        }
+      }
+      .slider_text {
+        position: absolute;
+        top: 50%;
+        width: 730px;
+        left: -265px;
+        transform: translateY(-35%);
+        h1 {
+          color: #fff;
+          font-size: 50px;
+          font-weight: 600;
+          line-height: 60px;
+        }
+        .btn_requestQuote {
+          @extend .btn_primary;
+          min-width: 172px;
+          line-height: 42px;
+          color: #000;
+          margin-top: 40px;
+          font-weight: 600;
+          &:after {
+            background: #fff;
+          }
+          &:hover {
+            span {
+              color: #000 !important;
+            }
+          }
+        }
+      }
+      .owl-nav {
+        margin: 0 !important;
+        button {
+          position: absolute;
+          z-index: 1;
+          margin: 0;
+          width: 40px;
+          height: 40px;
+          background: #fff;
+          border-radius: 50%;
+          i {
+            font-size: 28px;
+          }
+          &.owl-next {
+            right: -17px;
+            bottom: 30px;
+            i {
+              margin-left: 4px;
+            }
+          }
+          &.owl-prev {
+            left: -17px;
+            top: 30px;
+            i {
+              margin-right: 4px;
+            }
+          }
+          &:hover {
+            background: $primarycolor;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+// partnes-names css start
+
+.partners {
+  background: $divBackground;
+  .container {
+    @include flexBox(row, space-between, center);
+    padding: 0 106px;
+    .partner_image {
+      display: flex;
+      height: 140px;
+      width: 170px;
+      img {
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+// belives css start
+
+.belives {
+  position: relative;
+  .belives_inner {
+    position: relative;
+    z-index: 1;
+    background: #fff;
+    margin-top: 47px;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 34px 35px;
+    .article_box {
+      span {
+        @include flexBox(column, center, center);
+        width: 60px;
+        height: 60px;
+        background: #fef5dd;
+        border-radius: 50%;
+        margin-bottom: 20px;
+      }
+      h2 {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+      p {
+        font-size: 18px;
+      }
+    }
+    & .row > div[class^="col"] {
+      border-right: 1px solid #efefef;
+      &:nth-child(3n + 1) {
+        padding-right: 40px;
+      }
+      &:nth-child(3n + 2) {
+        padding: 0 40px;
+      }
+      &:nth-child(3n + 3) {
+        padding-left: 40px;
+      }
+      &:last-child {
+        border-right: 0px;
+      }
+    }
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: -47px;
+    left: 0;
+    width: 100%;
+    height: 160px;
+    background: $divBackground;
+  }
+}
+
+// dedicated css start
+
+.dedicated {
+  text-align: center;
+  padding: 68px 0px;
+  h3 {
+    font-size: 34px;
+    max-width: 640px;
+    margin: auto;
+    line-height: 43px;
+    font-weight: bold;
+    margin-bottom: 24px;
+  }
+  p {
+    font-size: 19px;
+    max-width: 853px;
+    margin: auto;
+  }
+  .dedicated_buttons {
+    @include flexBox(row, center, center);
+    margin-top: 42px;
+    a {
+      line-height: 42px;
+      margin: 0px 15px;
+      &.btn_requestProposal {
+        @extend .btn_primary;
+        min-width: 200px;
+      }
+
+      &.btn_contactRoyal {
+        @extend .btn_borderoutline;
+        min-width: 290px;
+      }
+    }
+  }
+}
+
+// training css start
+
+.training {
+  @extend .backgound_section;
+  .training_image {
+    @extend .background_image;
+  }
+  .training_data {
+    @extend .background_data;
+    @extend .dedicated;
+    small {
+      font-size: 32px;
+      color: $primarycolor;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 13px;
+    }
+    h3 {
+      font-size: 40px;
+      color: #fff;
+    }
+    p {
+      color: #fff;
+    }
+  }
+}
+
+// careers css start
+
+.career {
+  @extend .dedicated;
+  .career_data {
+    h3 {
+      font-size: 40px;
+    }
+    .btn_requestProposal {
+      min-width: 158px;
+    }
+    .container {
+      margin-top: 70px;
+    }
+    .career_boxes {
+      figure {
+        @include flexBox(row, center, center);
+        height: 400px;
+        border-radius: 20px;
+        margin: 0;
+        overflow: hidden;
+        img {
+          object-fit: cover;
+          transition: all 0.5s ease-in;
+        }
+      }
+      .effect_button_div {
+        position: relative;
+        z-index: 1;
+        top: -23px;
+        background: #fff;
+        padding: 6px;
+        border-radius: 20px;
+        width: calc(100% - 120px);
+        max-width: 250px;
+        margin: auto;
+        .effect_button {
+          @extend .btn_primary;
+          width: calc(100%);
+          text-transform: uppercase;
+          line-height: 45px;
+          font-size: 18px;
+        }
+      }
+
+      &:hover {
+        figure {
+          img {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+  }
+}
+
+// royal touch css start
+
+.royal_touch {
+  background: #fff;
+  padding: 60px 0px;
+  .container {
+    padding: 0px;
+  }
+  h3 {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  p {
+    font-size: 19px;
+    max-width: 853px;
+    margin: auto;
+    text-align: center;
+  }
+  .row {
+    margin-top: 55px;
+    .article_box {
+      text-align: center;
+      padding: 35px 0px;
+      position: relative;
+      z-index: 1;
+      span {
+        display: inline-flex;
+        height: 59px;
+        margin-bottom: 25px;
+        img {
+          object-fit: contain;
+          object-position: center;
+        }
+      }
+      h2 {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+      .circle_link {
+        width: 50px;
+        height: 50px;
+        background: $primarycolor;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 33px;
+        border-radius: 50%;
+        margin-top: 25px;
+        color: #000;
+        &:hover {
+          background: $divBackground;
+          color: #fff;
+        }
+      }
+    }
+
+    & > div[class^="col"] {
+      border-right: 1px solid #efefef;
+      border-bottom: 1px solid #efefef;
+      &:nth-child(3n + 1) {
+        padding: 0 40px;
+      }
+      &:nth-child(3n + 2) {
+        padding: 0 40px;
+      }
+      &:nth-child(3n + 3) {
+        padding: 0 40px;
+        border-right: 0px;
+      }
+      &:last-child {
+        border-right: 0px;
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: calc(100% - 35px);
+        height: calc(100% - 35px);
+        transform: scale(1) translateX(-50%) translateY(-50%);
+        z-index: 0;
+        box-shadow: 0 0 10px #e6e4e4;
+        border-radius: 16px;
+        opacity: 0;
+        transition: all 0.5s ease-in;
+      }
+
+      &:hover {
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .view_more {
+    @extend .btn_borderoutline;
+    min-width: 255px;
+    text-transform: capitalize;
+    line-height: 42px;
+    margin-top: 40px;
+    span {
+      position: relative;
+      z-index: 1;
+    }
+    &:after {
+      z-index: 0;
+    }
+  }
+}
+
+// testinomial css start
+.testinomial {
+  padding: 70px 0px 60px;
+  background: #ededf0;
+  h4 {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 40px;
+  }
+  .carousel {
+    display: flex !important;
+    .carousel-indicators {
+      display: block;
+      position: static !important;
+      margin: 0;
+      width: 425px;
+      background: #ededf0;
+      li {
+        width: 100% !important;
+        height: auto !important;
+        display: flex !important;
+        text-indent: 0;
+        opacity: 1;
+        background: no-repeat;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 25px;
+        padding: 7px 20px;
+        border-radius: 10px;
+        &.active {
+          background: #fff;
+          box-shadow: 0 0 10px #d6d6d6;
+        }
+        .user_image {
+          display: inline-flex;
+          width: 70px;
+          height: 70px;
+          background: #e4e4e4;
+          border-radius: 50%;
+          overflow: hidden;
+          margin-right: 23px;
+        }
+      }
+      strong {
+        font-size: 19px;
+        display: block;
+      }
+      span {
+        color: #a39dbb;
+      }
+    }
+
+    .carousel-item {
+      padding-left: 100px;
+      h6 {
+        font-size: 26px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .rapStar {
+        text-shadow: none;
+        margin: 0 0 15px;
+      }
+      p {
+        font-size: 19px;
+      }
+    }
+  }
+}
+
+// responsive css start
+@media (max-width: 1200px) {
+  .social_icons {
+    display: none;
+  }
+  .banner .slider_section .home_slider {
+    width: 560px;
+  }
+  .banner .pulse_button {
+    right: 77px;
+  }
+  .banner {
+    min-height: 480px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .banner .pulse_button {
+    display: none;
+  }
+}
+
+@media (max-width: 897px) {
+  .banner {
+    height: auto;
+    min-height: unset;
+    .slider_section {
+      padding-left: 0px !important;
+      padding-bottom: 10px;
+      .home_slider {
+        width: 100% !important;
+        .owl-stage-outer {
+          overflow: hidden !important;
+        }
+        .slider_text {
+          position: static !important;
+          transform: none !important;
+          width: auto !important;
+          text-align: center;
+        }
+        figure {
+          display: none;
+        }
+        .owl-nav button {
+          position: static !important;
+          margin: 35px 10px 0;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 900px) {
+  .royal_touch .row > div[class^="col"] {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .dedicated p,
+  .training .training_data p,
+  .career p,
+  .royal_touch p {
+    padding: 0px 60px;
+  }
+  footer .footer_bottom .right_footer .footer_links li {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .banner .slider_section .home_slider .slider_text h1 {
+    font-size: 35px;
+    line-height: 50px;
+  }
+  .belives .belives_inner .row > div[class^="col"]:nth-child(3n + 2),
+  .belives .belives_inner .row > div[class^="col"]:nth-child(3n + 3) {
+    padding: 0px 15px;
+  }
+  .dedicated p,
+  .training .training_data p,
+  .career p,
+  .royal_touch p {
+    padding: 0px 15px;
+  }
+  .banner .slider_section {
+    min-width: unset;
+  }
+  .testinomial .carousel .carousel-item {
+    padding-left: 0px;
+  }
+}
+
+@media (max-width: 575px) {
+  .dedicated p,
+  .training .training_data p,
+  .career p,
+  .royal_touch p {
+    padding: 0px 30px;
+    font-size: 16px;
+  }
+  .banner .slider_section .home_slider .slider_text h1 {
+    font-size: 27px;
+  }
+  .partners .container {
+    display: block !important;
+    padding: 0px 65px;
+  }
+  .partners .container .partner_image {
+    margin: 0px auto 28px;
+    display: block !important;
+  }
+  .partners {
+    padding-top: 20px;
+  }
+}

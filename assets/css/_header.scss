@@ -1,0 +1,96 @@
+.top-header {
+  background-color: #000000;
+  padding: 12px 0px;
+  .container {
+    @include flexBox(row, space-between, center);
+    & > span {
+      color: $primarycolor;
+      font-weight: 600;
+    }
+  }
+  ul {
+    margin-bottom: 0px;
+    display: flex;
+    align-items: center;
+    li {
+      display: inline-flex;
+      align-items: center;
+      margin: 0 0 0 22px;
+      &:first-child {
+        margin-left: 0px;
+      }
+    }
+    i {
+      display: inline-block;
+      margin-right: 8px;
+      height: 22px;
+      &.mail_icon {
+        width: 21px;
+        background-position: 0 2px;
+      }
+      &.payment_icon {
+        width: 22px;
+        background-position: -32px 3px;
+      }
+      &.user_icon {
+        width: 21px;
+        background-position: -65px 1px;
+      }
+      &.phone_icon {
+        width: 21px;
+        background-position: -96px 2px;
+      }
+    }
+    a {
+      color: #fafafa;
+      &:hover,
+      &:focus,
+      &:active {
+        color: $primarycolor;
+      }
+    }
+  }
+}
+
+// header css start
+
+header {
+  &#dp_header {
+    .navbar {
+      padding: 10px 0;
+    }
+    .navbar-nav {
+      @include flexBox(row, center, center);
+      margin-left: auto;
+      .nav-item {
+        position: relative;
+        margin-left: 25px;
+        .menu_item {
+          display: block;
+          padding: 0px;
+          text-transform: capitalize;
+          font-size: 16px;
+          font-weight: 600;
+          color: #000;
+        }
+        .btn_contactus {
+          @extend .btn_primary;
+          min-width: 120px;
+          line-height: 38px;
+        }
+        .btn_requestquote {
+          @extend .btn_borderoutline;
+          min-width: 160px;
+          line-height: 38px;
+        }
+      }
+    }
+    &.sticky-header {
+      position: fixed;
+      width: 100%;
+      background: #fff;
+      z-index: 100;
+      top: 0;
+    }
+  }
+}
